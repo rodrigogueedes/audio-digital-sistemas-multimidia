@@ -7,17 +7,23 @@ IMG, SVG, AUDIO, MIDI = (ROOT/'assets'/name for name in ('img','svg','audio','mi
 for folder in (IMG, SVG, AUDIO, MIDI, ROOT/'assets'/'video'):
     folder.mkdir(parents=True, exist_ok=True)
 
-def write_wav(path, rate, samples):
+def write_wav(path, rate, samples, bit_depth=16):
     with wave.open(str(path), 'wb') as f:
-        f.setnchannels(1); f.setsampwidth(2); f.setframerate(rate)
-        f.writeframes(b''.join(struct.pack('<h', max(-32768,min(32767,int(s*32767)))) for s in samples))
+        f.setnchannels(1); f.setsampwidth(bit_depth // 8); f.setframerate(rate)
+        if bit_depth == 8:
+            f.writeframes(bytes(max(0, min(255, round(s * 127.5 + 128))) for s in samples))
+        else:
+            f.writeframes(b''.join(struct.pack('<h', max(-32768,min(32767,int(s*32767)))) for s in samples))
 
 duration = 2.0
 for rate, name in ((8000,'tom-8khz.wav'),(22050,'tom-22050hz.wav'),(44100,'tom-44100hz.wav')):
-    write_wav(AUDIO/name, rate, [0.65*math.sin(2*math.pi*440*i/rate) for i in range(int(rate*duration))])
+    if not (AUDIO/name).exists():
+        write_wav(AUDIO/name, rate, [0.65*math.sin(2*math.pi*440*i/rate) for i in range(int(rate*duration))])
 rate=22050; n=int(rate*duration); tone=[0.6*math.sin(2*math.pi*440*i/rate) for i in range(n)]
 for bits,name in ((8,'tom-8bits.wav'),(16,'tom-16bits.wav')):
-    levels=2**bits; write_wav(AUDIO/name,[0] if False else rate,[round(x*(levels/2-1))/(levels/2-1) for x in tone])
+    if not (AUDIO/name).exists():
+        levels=2**bits
+        write_wav(AUDIO/name, rate, [round(x*(levels/2-1))/(levels/2-1) for x in tone], bit_depth=bits)
 if not (AUDIO/'tom-exemplo.wav').exists():
     write_wav(AUDIO/'tom-exemplo.wav',rate,tone)
 random.seed(7); noisy=[max(-.95,min(.95,x+random.uniform(-.19,.19))) for x in tone]
