@@ -12,8 +12,8 @@ window.MEDIA = {
   bits16:{src:'assets/audio/tom-16bits.wav',title:'Tom quantizado · 16 bits',caption:'Exemplo de áudio representado com 16 bits por amostra.',alt:''},
   wav:{src:'assets/audio/tom-exemplo.wav',title:'Exemplo WAV',caption:'Áudio PCM sem compressão, em formato WAV.',alt:''},
   mp3:{src:'assets/audio/tom-exemplo.mp3',title:'Exemplo MP3',caption:'A mesma gravação do exemplo WAV, exportada em MP3 para comparar os formatos.',alt:''},
-  noisy:{src:'assets/audio/antes-com-ruido.wav',title:'Antes · com ruído',caption:'Tom acompanhado de ruído de fundo.',alt:''},
-  clean:{src:'assets/audio/depois-limpo.wav',title:'Depois · ruído reduzido',caption:'O mesmo tom, com ruído reduzido e volume normalizado.',alt:''},
+  noisy:{src:'assets/audio/antes-com-ruido.wav',title:'Antes · com ruído',caption:'Fala gravada com ruído ambiente.',alt:''},
+  clean:{src:'assets/audio/depois-limpo.wav',title:'Depois · ruído reduzido',caption:'A mesma fala após redução de ruído e ajuste de nível no Audacity.',alt:''},
   midiRender:{src:'assets/audio/trilha-midi-renderizada.wav',title:'Trilha MIDI renderizada',caption:'Versão em áudio de uma melodia de exemplo criada em MIDI.',alt:''},
   midiFile:{src:'assets/midi/trilha-exemplo.mid',title:'Arquivo MIDI original',caption:'Baixe a sequência MIDI original para substituir ou abrir em um editor compatível.',alt:''},
   tutorial:{src:'assets/video/tutorial-placeholder.mp4',title:'Vídeo tutorial de exemplo',caption:'Placeholder MP4. Substitua pelo vídeo tutorial final.',alt:'Vídeo demonstrativo sobre áudio digital.'}

@@ -27,8 +27,10 @@ for bits,name in ((8,'tom-8bits.wav'),(16,'tom-16bits.wav')):
 if not (AUDIO/'tom-exemplo.wav').exists():
     write_wav(AUDIO/'tom-exemplo.wav',rate,tone)
 random.seed(7); noisy=[max(-.95,min(.95,x+random.uniform(-.19,.19))) for x in tone]
-write_wav(AUDIO/'antes-com-ruido.wav',rate,noisy)
-write_wav(AUDIO/'depois-limpo.wav',rate,[x*.95 for x in tone])
+if not (AUDIO/'antes-com-ruido.wav').exists():
+    write_wav(AUDIO/'antes-com-ruido.wav',rate,noisy)
+if not (AUDIO/'depois-limpo.wav').exists():
+    write_wav(AUDIO/'depois-limpo.wav',rate,[x*.95 for x in tone])
 
 # Tiny monophonic MIDI file (middle C, D, E, G), one quarter note per event.
 def vlq(value):

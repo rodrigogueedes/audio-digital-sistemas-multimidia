@@ -14,9 +14,9 @@ Todos os caminhos usados pelas páginas ficam em `js/media.js`. Para trocar uma 
 | `assets/audio/tom-8bits.wav`, `tom-16bits.wav` | Comparação de profundidade | A mesma gravação da equipe em mono, 48.000 Hz, exportada em PCM de 8 e 16 bits. |
 | `assets/audio/tom-exemplo.wav` | Módulo WAV versus MP3 | Gravação da equipe em WAV. Use o mesmo áudio na versão MP3 para uma comparação justa. O gerador preserva esse arquivo se ele já existir. |
 | `assets/audio/tom-exemplo.mp3` | Módulo WAV versus MP3 | A mesma gravação, exportada em MP3. O caminho já está configurado em `js/media.js`. |
-| `assets/audio/antes-com-ruido.wav`, `depois-limpo.wav` | Antes/depois de tratamento | Gravação original e versão tratada; mantenha o mesmo conteúdo para comparar. |
+| `assets/audio/antes-com-ruido.wav`, `depois-limpo.wav` | Antes/depois de tratamento | A mesma fala da equipe antes e depois da redução de ruído e ajuste de nível. O gerador preserva os arquivos se já existirem. |
 | `assets/audio/trilha-midi-renderizada.wav` | Galeria MIDI | Renderização audível do arquivo MIDI original. |
 | `assets/midi/trilha-exemplo.mid` | Download MIDI | Arquivo MIDI original, editável em software compatível. |
 | `assets/video/tutorial-placeholder.mp4` | Vídeo da galeria | **Pendente:** nenhum codificador MP4 está instalado neste ambiente. Grave/exporte um MP4 H.264 com áudio opcional e salve com este nome, ou altere `src` em `js/media.js`. O player já está preparado. |
 
-Os arquivos `tom-8khz.wav`, `tom-22050hz.wav`, `tom-44100hz.wav`, `tom-8bits.wav`, `tom-16bits.wav`, `tom-exemplo.wav` e `tom-exemplo.mp3` são gravações fornecidas pela equipe. Os exemplos de tratamento e trilha MIDI, além dos desenhos PNG e SVG, foram gerados pelo script local. O gerador preserva as cinco versões comparativas se elas já existirem.
+Os arquivos `tom-8khz.wav`, `tom-22050hz.wav`, `tom-44100hz.wav`, `tom-8bits.wav`, `tom-16bits.wav`, `tom-exemplo.wav`, `tom-exemplo.mp3`, `antes-com-ruido.wav` e `depois-limpo.wav` são gravações fornecidas pela equipe. A trilha MIDI e os desenhos PNG e SVG foram gerados pelo script local. O gerador preserva as gravações se elas já existirem.
