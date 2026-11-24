@@ -11,7 +11,7 @@ window.MEDIA = {
   bits8:{src:'assets/audio/tom-8bits.wav',title:'Tom quantizado · 8 bits',caption:'Exemplo de áudio representado com 8 bits por amostra.',alt:''},
   bits16:{src:'assets/audio/tom-16bits.wav',title:'Tom quantizado · 16 bits',caption:'Exemplo de áudio representado com 16 bits por amostra.',alt:''},
   wav:{src:'assets/audio/tom-exemplo.wav',title:'Exemplo WAV',caption:'Áudio PCM sem compressão, em formato WAV.',alt:''},
-  mp3:{src:'assets/audio/tom-exemplo.wav',title:'Áudio de referência (MP3 pendente)',caption:'Exemplo WAV tocável. Substitua por MP3 real e atualize este caminho antes da entrega final.',alt:''},
+  mp3:{src:'assets/audio/tom-exemplo.mp3',title:'Exemplo MP3',caption:'A mesma gravação do exemplo WAV, exportada em MP3 para comparar os formatos.',alt:''},
   noisy:{src:'assets/audio/antes-com-ruido.wav',title:'Antes · com ruído',caption:'Tom acompanhado de ruído de fundo.',alt:''},
   clean:{src:'assets/audio/depois-limpo.wav',title:'Depois · ruído reduzido',caption:'O mesmo tom, com ruído reduzido e volume normalizado.',alt:''},
   midiRender:{src:'assets/audio/trilha-midi-renderizada.wav',title:'Trilha MIDI renderizada',caption:'Versão em áudio de uma melodia de exemplo criada em MIDI.',alt:''},

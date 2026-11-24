@@ -18,7 +18,8 @@ for rate, name in ((8000,'tom-8khz.wav'),(22050,'tom-22050hz.wav'),(44100,'tom-4
 rate=22050; n=int(rate*duration); tone=[0.6*math.sin(2*math.pi*440*i/rate) for i in range(n)]
 for bits,name in ((8,'tom-8bits.wav'),(16,'tom-16bits.wav')):
     levels=2**bits; write_wav(AUDIO/name,[0] if False else rate,[round(x*(levels/2-1))/(levels/2-1) for x in tone])
-write_wav(AUDIO/'tom-exemplo.wav',rate,tone)
+if not (AUDIO/'tom-exemplo.wav').exists():
+    write_wav(AUDIO/'tom-exemplo.wav',rate,tone)
 random.seed(7); noisy=[max(-.95,min(.95,x+random.uniform(-.19,.19))) for x in tone]
 write_wav(AUDIO/'antes-com-ruido.wav',rate,noisy)
 write_wav(AUDIO/'depois-limpo.wav',rate,[x*.95 for x in tone])
